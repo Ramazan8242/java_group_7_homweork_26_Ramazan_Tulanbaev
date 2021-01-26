@@ -5,7 +5,7 @@ public interface Connection {
     void closeTheDatabaseConnection();
     boolean checkIfThereIsAConnectionToTheBase();
     void readOneRecordByIndex(KeyAndValue[] keyAndValues, int index);
-    void checkIfThereIsAnEntryForSuchAndSuchAKey(KeyAndValue[] keyAndValues, int key);
+    void checkIfThereIsAnEntryForSuchAndSuchAKey(KeyAndValue[] keyAndValues, String key);
     void readOneRecordByKey(KeyAndValue[] keyAndValues, int key);
     void readACertainSetOfRecordsFromTheDatabase(KeyAndValue[] keyAndValues, int index, int i);
     void findOutTheNumberOfRecordsInTheDatabase(KeyAndValue[] keyAndValues);

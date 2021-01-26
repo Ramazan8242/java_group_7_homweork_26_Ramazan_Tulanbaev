@@ -54,7 +54,7 @@ public class KeyAndValue implements Connection{
     }
 
     @Override
-    public void checkIfThereIsAnEntryForSuchAndSuchAKey(KeyAndValue[] keyAndValues, int key) {
+    public void checkIfThereIsAnEntryForSuchAndSuchAKey(KeyAndValue[] keyAndValues, String key) {
         int p = 0;
         for (int i = 0; i < keyAndValues.length; i++) {
             if (keyAndValues[i].getReadAndWriteKey().equals(key)){
@@ -119,5 +119,14 @@ public class KeyAndValue implements Connection{
                 k.setReadAndWritValue(key);
             }
         }
+    }
+
+    @Override
+    public String toString() {
+        return "KeyAndValue{" +
+                "readAndWriteKey='" + readAndWriteKey + '\'' +
+                ", readAndWritValue='" + readAndWritValue + '\'' +
+                ", connection=" + connection +
+                '}';
     }
 }

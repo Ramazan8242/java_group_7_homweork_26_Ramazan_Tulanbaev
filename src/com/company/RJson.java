@@ -1,26 +1,22 @@
 package com.company;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.Scanner;
+import java.nio.file.Path;
 
 public class RJson {
-    private static final Gson gson = new GsonBuilder().setPrettyPrinting().create();
-    public static RJson[] truckReader() {
-        String fromJson = "";
-        try (
-                FileReader fr = new FileReader("DatabaseValue.json");
-                Scanner scan = new Scanner(fr)
-        ) {
-            while (scan.hasNextLine()) {
-                fromJson += scan.nextLine();
+    public static String readJson(Path path) {
+        String json = "";
+        try (FileReader fr = new FileReader(String.valueOf(path))) {
+            int c;
+            while ((c = fr.read()) != -1) {
+                json += (char) c;
             }
-        }catch (IOException e){
+            return json;
+        } catch (IOException e) {
             e.printStackTrace();
         }
-        return gson.fromJson(fromJson, RJson[].class);
+
+        return json;
     }
 }
