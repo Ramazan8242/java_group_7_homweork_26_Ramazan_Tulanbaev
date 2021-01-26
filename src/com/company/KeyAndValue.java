@@ -71,7 +71,7 @@ public class KeyAndValue implements Connection{
         boolean a = false;
         try {
             for (KeyAndValue k: keyAndValues) {
-                if (getReadAndWriteKey().equals(getReadAndWriteKey())){
+                if (getReadAndWriteKey().equals(key)){
                     System.out.println(getReadAndWriteKey());
                     System.out.println("Ключ найден");
                     a = true;
